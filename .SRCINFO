@@ -1,7 +1,7 @@
 pkgbase = bisq2
 	pkgdesc = The Decentralized Trading Platform
 	pkgver = 2.0.2
-	pkgrel = 1
+	pkgrel = 2
 	url = https://bisq.network
 	arch = any
 	license = AGPL3

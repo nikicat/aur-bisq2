@@ -3,7 +3,7 @@
 
 pkgname=bisq2
 pkgver=2.0.2
-pkgrel=1
+pkgrel=2
 pkgdesc="The Decentralized Trading Platform"
 arch=('any')
 url="https://bisq.network"
@@ -19,9 +19,15 @@ _binname=Bisq2
 provides=("bisq2")
 
 build() {
-  cd "${srcdir}/${pkgname}" || exit
+  cd "${srcdir}/${pkgname}"
   msg2 "Building bisq2..."
   ./gradlew desktop:desktop-app:build
+}
+
+check() {
+  cd "${srcdir}/${pkgname}"
+  msg2 "Testing bisq2..."
+  ./gradlew test
 }
 
 package() {
