@@ -8,20 +8,9 @@ on:  # yamllint disable-line rule:truthy
 jobs:
   validation:
     runs-on: ubuntu-latest
-    name: Validate a Pull Request
+    name: Build package
     steps:
       - uses: actions/checkout@v1
 
-      - name: Validate PKGBUILD
-        id: validate-pkgbuild
-        uses: 2m/arch-pkgbuild-builder@v1.16
-        with:
-          target: 'pkgbuild'
-          pkgname: .
-
-      - name: Validate SRCINFO
-        id: validate-srcinfo
-        uses: 2m/arch-pkgbuild-builder@v1.16
-        with:
-          target: 'srcinfo'
-          pkgname: .
+      - name: Build package
+        uses: mijailr/arch-makepkg-action@v1
